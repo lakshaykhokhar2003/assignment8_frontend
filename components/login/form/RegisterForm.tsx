@@ -22,7 +22,7 @@ const RegisterForm: React.FC = () => {
 
     const onSubmit = async (data: RegisterFormData) => {
         try {
-            const res = await axios.post(`${API}/api/auth/register`, data)
+            const res = await axios.post(`${API}/auth/register`, data)
             if (res?.status === 201) toastNotification({type: "success", message: "Registration successful",})
             navigate.push('/login')
             reset()

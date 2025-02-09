@@ -22,7 +22,7 @@ const LoginForm: React.FC = () => {
 
     const onSubmit = async (data: LoginFormData) => {
         try {
-            const res = await axios.post(`${API}/api/auth/login`, data)
+            const res = await axios.post(`${API}/auth/login`, data)
             if (res?.status === 200) login({token: res.data.token, user: res.data.user})
             reset()
         } catch (error) {

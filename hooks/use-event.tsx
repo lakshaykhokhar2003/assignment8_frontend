@@ -12,7 +12,7 @@ const useEvent = () => {
         color: string
     }): Promise<void> => {
 
-        const res = await axios.post(`${API}/api/events`, newEvent, {
+        const res = await axios.post(`${API}/events`, newEvent, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -29,7 +29,7 @@ const useEvent = () => {
         try {
             const res: AxiosResponse<{
                 token: string
-            }> = await axios.post(`${API}/api/auth/verify`, {token});
+            }> = await axios.post(`${API}/auth/verify`, {token});
             return res;
         } catch (error) {
             console.log(error);
@@ -40,7 +40,7 @@ const useEvent = () => {
 
     const attend = async (id: string): Promise<void> => {
         try {
-            const res = await axios.put(`${API}/api/events/attend/${id}`, {}, {
+            const res = await axios.put(`${API}/events/attend/${id}`, {}, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
