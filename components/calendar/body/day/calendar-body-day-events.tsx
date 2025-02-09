@@ -12,9 +12,9 @@ export default function CalendarBodyDayEvents() {
     <div className="flex flex-col gap-2">
       <p className="font-medium p-2 pb-0 font-heading">Events</p>
       <div className="flex flex-col gap-2">
-        {dayEvents.map((event) => (
+        {dayEvents.map((event,index) => (
           <div
-            key={event._id}
+            key={(event._id as string)+index}
             className="flex items-center gap-2 px-2 cursor-pointer"
             onClick={() => {
               setSelectedEvent(event)
