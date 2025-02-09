@@ -21,6 +21,10 @@ const CalendarDemo = () => {
       setEvents(initialEvents);
     });
 
+    socket.on("newEvent", (newEvent) => {
+      setEvents((prev) => [...prev, newEvent]);
+    });
+
     return () => {
       socket.disconnect();
     };
