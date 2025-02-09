@@ -13,7 +13,9 @@ export const getAllEvents = async () => {
 }
 export const getEvent = async (id: string): Promise<AxiosResponse | undefined> => {
     try {
-        const res = await axios.get(`${API}/api/events/${id}`);
+        const uri = `${API}/api/events/${id}`;
+        console.log(uri)
+        const res = await axios.get(uri);
         return res;
     } catch (error) {
         console.log(error);
