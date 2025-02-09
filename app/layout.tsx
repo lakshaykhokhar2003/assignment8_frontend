@@ -21,8 +21,8 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'React/Shadcn Calendar',
-  description: 'By @charlietlamb',
+  title: 'Event Management Platform',
+  description: 'By @lakshaykhokhar2003 ',
 }
 
 export default function RootLayout({
