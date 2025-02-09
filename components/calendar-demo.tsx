@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import Calendar from './calendar/calendar';
 import { CalendarEvent, Mode } from './calendar/calendar-types';
-import {SOCKET} from '@/lib/utils';
+import {API, SOCKET} from '@/lib/utils';
 import io from "socket.io-client";
 
 
@@ -13,6 +13,7 @@ const CalendarDemo = () => {
   const [events, setEvents] = useState<CalendarEvent[]>([]);
   const [mode, setMode] = useState<Mode>('month');
   const [date, setDate] = useState<Date>(new Date());
+  console.log(`${API}/api/events/`)
 
   useEffect(() => {
     if (!socket.connected) socket.connect();
