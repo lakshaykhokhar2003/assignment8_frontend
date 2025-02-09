@@ -1,73 +1,92 @@
-# React/ShadCN Calendar
+# Event Management Platform - Frontend
 
-This calendar is built with shadcn & tailwind. Has all the aspects you'd want in a calendar for a dashboard/app!
+![Next.js](https://img.shields.io/badge/Next.js-15.x-blue)
+![React](https://img.shields.io/badge/React-19.x-61DAFB)
+![Redux](https://img.shields.io/badge/Redux-Toolkit-764ABC)
+![shadcn/ui](https://img.shields.io/badge/shadcn/ui-0.5.x-000000)
+![Framer Motion](https://img.shields.io/badge/Framer%20Motion-10.x-0055FF)
+![Socket.IO](https://img.shields.io/badge/Socket.IO-4.x-010101)
+![Next Themes](https://img.shields.io/badge/Next%20Themes-1.x-000000)
 
-Make sure to give this repo a star!
+Welcome to the frontend of the **Event Management Platform**! This is a modern, responsive, and feature-rich calendar application built with **Next.js 15**, **React Redux**, **shadcn/ui**, and **Framer Motion**. It supports **dark/light mode** using **Next Themes** and integrates **Socket.IO** for real-time updates.
+
+---
 
 ## Features
 
-- 🎨 Fully customizable with Tailwind CSS
-- 🌓 Dark mode support
-- 🎯 Accessible components using Radix UI
-- 📱 Responsive design
-- 🔄 Multiple view modes
-- 📅 Advanced event management
+### Core Features
+- **🎨 Fully Customizable UI**: Built with **shadcn/ui** and **Tailwind CSS** for a sleek and modern design.
+- **🌓 Dark/Light Mode**: Seamless theme switching using **Next Themes**.
+- **📱 Responsive Design**: Works flawlessly on all devices.
+- **⚡ Real-Time Updates**: Integrated with **Socket.IO** for real-time event updates.
+- **🎯 Accessible Components**: Built with accessibility in mind using **Radix UI**.
 
-## Modes
+### Calendar Features
+- **📅 Multiple View Modes**: Day, week, month, and agenda views.
+- **📝 Event Management**:
+    - Create, edit, and delete events.
+    - Drag-and-drop support for rescheduling events.
+    - Color-coded event categories.
+- **🔍 Advanced Filtering**: Filter events by category, date, or status.
+- **📊 Event Analytics**: Visualize event data with charts and graphs.
 
-### Day
+### Dialog Features
+- **Create Event Dialog**:
+    - 📝 Event title input.
+    - 🕒 Date/time picker for event scheduling.
+    - 🎨 Color picker for event categorization.
+    - ✅ Form validation.
+    - 🔄 Real-time preview.
+- **Manage Event Dialog**:
+    - ✏️ Edit existing events.
+    - 🗑️ Delete events.
+    - 🕒 Modify date/time.
+    - 🎨 Update event color.
+    - ⚡ Quick actions.
 
-- Detailed single day view
-- Hour-by-hour breakdown
-- Event management
-- Time-slot selection
+---
 
-### Week
+## Technologies Used
 
-- 7-day view
-- Multiple event display
-- Quick navigation
+- **Frontend Framework**: Next.js 15
+- **State Management**: React Redux (Redux Toolkit)
+- **UI Library**: shadcn/ui
+- **Styling**: Tailwind CSS
+- **Animation**: Framer Motion
+- **Theming**: Next Themes (dark/light mode)
+- **Real-Time Communication**: Socket.IO
+- **Form Handling**: React Hook Form
+- **Date/Time Picker**: React Datepicker
+- **Icons**: Lucide Icons
 
-### Month
+---
 
-- Full month overview
-- Event preview
-- Quick date selection
-- Today highlighting
+## Getting Started
 
-## Dialog Features
+### Installation
 
-### Create Event Dialog
+1. **Clone the repository**:
+   ```bash
+   git clone hhttps://github.com/lakshaykhokhar2003/assignment8_frontend
+   ```
 
-- 📝 Event title input
-- 🕒 Date/time picker for start and end times
-- 🎨 Color picker for event categorization
-- ✅ Form validation
-- 🔄 Real-time preview
-
-### Manage Event Dialog
-
-- ✏️ Edit existing events
-- 🗑️ Delete events
-- 🕒 Modify date/time
-- 🎨 Update event color
-- ⚡ Quick actions
-
-### Date/Time Picker
-
-- 📅 Calendar date selection
-- ⏰ Hour selection (24-hour format)
-
-[From RDSX](https://time.rdsx.dev/)
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-## Original Inspiriation
-
-[Synergy CRM](https://synergy-platform.vercel.app/calendar)
-
+2. **.env File**:
+    - Create a `.env` file in the root directory.
+        - Add the following environment variables:
+          ```env
+          NEXT_PUBLIC_API_URL=your_backend_url
+          NEXT_PUBLIC_SOCKET_URL=your_backend_url
+          ```   
+        - Change NEXT_PUBLIC_SOCKET_URL to `wss://you_deployed_url.com` when deploying the app.
+3. **Install dependencies**:
+   ```bash
+   yarn install
+   ```
+4. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
+   
 ## License
 
 MIT
