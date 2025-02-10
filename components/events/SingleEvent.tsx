@@ -53,10 +53,11 @@ const SingleEvent = ({event: initialEvent}: { event: CalendarEvent }) => {
     if (!isClient) return null;
 
     const isAdmin = user?.name === event.createdBy?.name;
+    const isAttending = event.attendees?.includes(user?._id as string);
 
     return (
         <div className="min-h-screen bg-gray-100 dark:bg-black p-6">
-            <div className="max-w-2xl mx-auto">
+            <div className="max-w-2xl mx-auto py-12">
                 <div className="relative h-48 w-full">
                     <Image
                         src={randomImageChooser() || "https://placehold.co/600x400"}
@@ -85,7 +86,7 @@ const SingleEvent = ({event: initialEvent}: { event: CalendarEvent }) => {
                         <div className="text-sm text-gray-600 dark:text-gray-400">
                             {event.attendees?.length} people attending
                         </div>
-                        {!isAdmin && (
+                        {(!isAdmin && !isAttending) && (
                             <Button
                                 className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-800 dark:hover:bg-blue-900 text-white"
                                 onClick={() => attend(event._id as string)}
