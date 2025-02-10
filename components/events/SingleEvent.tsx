@@ -53,7 +53,12 @@ const SingleEvent = ({event: initialEvent}: { event: CalendarEvent }) => {
     if (!isClient) return null;
 
     const isAdmin = user?.name === event.createdBy?.name;
-    const isAttending = event.attendees?.includes(user?._id as string);
+    const isAttending = event.attendees?.some(attendee =>
+        typeof attendee === "string"
+            ? attendee === user?._id
+            : attendee?._id === user?._id
+    )
+
 
     return (
         <div className="min-h-screen bg-gray-100 dark:bg-black p-6">
